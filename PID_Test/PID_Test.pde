@@ -1,6 +1,6 @@
 int frequency = 120;
-PID xPID = new PID(0, 0, 0, frequency, 1);
-PID yPID = new PID(0, 0, 0, frequency, 1);
+PID xPID = new PID(0, 0, 0, frequency, 10);
+PID yPID = new PID(0, 0, 0, frequency, 10);
 Ball moveObject = new Ball(0, 0, 25);
 Slider pGainSlider;
 Slider iGainSlider;
@@ -13,7 +13,7 @@ void setup() {
   frameRate(frequency);
   
   float maxPGain = 1;
-  float maxIGain = .01;
+  float maxIGain = .1;
   float maxDGain = 1;
   
   moveObject.x = width / 2;
